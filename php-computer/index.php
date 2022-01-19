@@ -93,7 +93,7 @@
 
             public function printMe() {
 
-                return $this -> printMe();
+                echo $this;
             }
 
             public function __toString() {
