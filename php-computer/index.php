@@ -67,13 +67,23 @@
                 return $this -> modello;
             }
             public function setModello($modello) {
-                return $this -> modello = $modello;
+
+                if (strlen($modello) < 3 || strlen($modello) > 20) {
+                    throw new Exception ("Il modello deve contenere almeno 3 caratteri e massimo 20");
+                }
+
+                $this -> modello = $modello;
             }
             public function getMarca() {
                 return $this -> marca;
             }
             public function setMarca($marca) {
-                return $this -> marca = $marca;
+
+                if (strlen($marca) < 3 || strlen($marca) > 20) {
+                    throw new Exception ("La marca deve contenere almeno 3 caratteri e massimo 20");
+                }
+
+                $this -> marca = $marca;
             }
 
             public function printMe() {
