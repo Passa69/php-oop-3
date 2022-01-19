@@ -70,7 +70,22 @@
             public function setMarca($marca) {
                 return $this -> marca = $marca;
             }
+
+            public function printMe() {
+
+                return $this -> printMe();
+            }
+
+            public function __toString() {
+                return $this -> getMarca() . "<br>" . $this -> getModello() . ": " . $this -> getPrezzo() . " [" . $this -> getCodiceUnivoco() . "]";
+            }
         }
+
+        $pc1 = new Computer("1122DDDEE", 25);
+        $pc1 -> setModello("Havoc");
+        $pc1 -> setMarca("Asus");
+
+        echo $pc1 . "<br>";
     ?>
 </body>
 </html>
