@@ -50,7 +50,12 @@
                 return $this -> codiceUnivoco;
             }
             public function setCodiceUnivoco($codiceUnivoco) {
-                return $this -> codiceUnivoco = $codiceUnivoco;
+
+                if (!(is_numeric($codiceUnivoco) && strlen($codiceUnivoco) == 6)) {
+                    throw new Exception ("Il codice deve contenere 6 cifre");
+                }
+
+                $this -> codiceUnivoco = $codiceUnivoco;
             }
             public function getPrezzo() {
                 return $this -> prezzo;
@@ -81,11 +86,16 @@
             }
         }
 
-        $pc1 = new Computer("1122DDDEE", 25);
-        $pc1 -> setModello("Havoc");
-        $pc1 -> setMarca("Asus");
+        try {
+            $pc1 = new Computer("123456", 25);
+            $pc1 -> setModello("Havoc");
+            $pc1 -> setMarca("Asus");
 
-        echo $pc1 . "<br>";
+            echo $pc1 . "<br>";
+        } catch (Exception $e) {
+            echo "Eccezione: " . $e -> getMessage();
+        } 
+        
     ?>
 </body>
 </html>
