@@ -61,7 +61,12 @@
                 return $this -> prezzo;
             }
             public function setPrezzo($prezzo) {
-                return $this -> prezzo = $prezzo;
+                
+                if (!is_int($prezzo) && $prezzo < 0 && $prezzo > 2000) {
+                    throw new Exception ("Il prezzo deve essere una cifra compresa tra 0 e 2000");
+                }
+
+                $this -> prezzo = $prezzo;
             }
             public function getModello() {
                 return $this -> modello;
@@ -97,7 +102,7 @@
         }
 
         try {
-            $pc1 = new Computer("123456", 25);
+            $pc1 = new Computer("123456", 20);
             $pc1 -> setModello("Havoc");
             $pc1 -> setMarca("Asus");
 
