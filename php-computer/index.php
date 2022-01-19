@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Hello World!</h1>
     <?php
         /** CONSEGNA:
          *      
@@ -31,6 +32,45 @@
          *      Testare la classe appena definita con tutte le casistiche interessanti per verificare
          *      il corretto funzionamento dell'algoritmo
          */
+
+        class Computer {
+
+            private $codiceUnivoco;
+            private $modello;
+            private $prezzo;
+            private $marca;
+
+            public function __construct($codiceUnivoco, $prezzo) {
+
+                $this -> setCodiceUnivoco($codiceUnivoco);
+                $this -> setPrezzo($prezzo);
+            }
+
+            public function getCodiceUnivoco() {
+                return $this -> codiceUnivoco;
+            }
+            public function setCodiceUnivoco($codiceUnivoco) {
+                return $this -> codiceUnivoco = $codiceUnivoco;
+            }
+            public function getPrezzo() {
+                return $this -> prezzo;
+            }
+            public function setPrezzo($prezzo) {
+                return $this -> prezzo = $prezzo;
+            }
+            public function getModello() {
+                return $this -> modello;
+            }
+            public function setModello($modello) {
+                return $this -> modello = $modello;
+            }
+            public function getMarca() {
+                return $this -> marca;
+            }
+            public function setMarca($marca) {
+                return $this -> marca = $marca;
+            }
+        }
     ?>
 </body>
 </html>
